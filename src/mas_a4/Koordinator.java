@@ -11,8 +11,11 @@ public class Koordinator {
 	private ArrayList<Bote> boteList;
 
 	private int tage;
+	private int aktTag;
 	private int sender;
 
+	private int aktProc = 0;
+	
 	public Koordinator(ArrayList<Ziel> ziele, int tage) {
 		this.zielList = ziele;
 		this.tage = tage;
@@ -22,19 +25,38 @@ public class Koordinator {
 
 	@ScheduledMethod(start = 1, interval = 1)
 	public void run() {
-		for (int aktTag = 0; aktTag < tage; aktTag++) {
-			// Ziele an Boten mitteilen
-
-			// Lieferkosten sammeln
-
-			// Geringste Lieferkosten bestimmen mit Trust
-
-			// Lieferungen den Boten zuweisen
-
-			// Auswertung von Kunden Feedback
-
-			//
+		if (aktTag < tage) {
+			switch (aktProc) {
+			case 0:
+				// Ziele an Boten mitteilen
+				zieleAnBoten();
+				break;
+			case 1:
+				// Lieferkosten sammeln
+				break;
+			case 2:
+				// Geringste Lieferkosten bestimmen mit Trust
+				break;
+			case 3:
+				// Lieferungen den Boten zuweisen
+				break;
+			case 4:
+				// Auswertung von Kunden Feedback
+				break;
+			case 5:
+				// Nachdem alle Feedbacks ausgwertet wurden, muss der Tag erhöhrt werden
+				resetDay();
+				break;
+			default:
+				break;
+			}
 		}
+	}
+
+	private void zieleAnBoten() {
+		boteList.stream().forEach(b -> {
+			send(sender, b.getSender(), FIPA_Performative.INFORM, Content.HOLE_LIEFERUNG);
+		});
 	}
 
 	public void addBote(Bote b) {
@@ -43,6 +65,11 @@ public class Koordinator {
 
 	public int getSender() {
 		return sender;
+	}
+	
+	private void resetDay() {
+		aktTag++;
+		aktProc = 0;
 	}
 
 	////////////////////////////////////////////////////////////////////////////////////////////////

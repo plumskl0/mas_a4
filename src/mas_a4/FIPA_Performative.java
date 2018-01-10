@@ -9,5 +9,5 @@ public enum FIPA_Performative {
 	
 	//Sie die können bei Bedarf die fehlenden Performatives ergänzen.
 	
-	INFORM, REQUEST, REGISTER
+	INFORM, REQUEST
 }

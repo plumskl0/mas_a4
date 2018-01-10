@@ -49,7 +49,6 @@ public class CustomBuilder implements ContextBuilder<Object> {
 
 		// Verhandlung?
 		Parameters params = RunEnvironment.getInstance().getParameters();
-		System.out.println(params.getInteger("tage"));
 		coordinator = new Koordinator(zielListe, params.getInteger("tage"));
 		context.add(coordinator);
 

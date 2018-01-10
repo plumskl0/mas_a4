@@ -7,8 +7,6 @@ public class FIPA_Message {
 	private FIPA_Performative performative;
 	private String content;
 	
-	private Lieferkosten lk;
-	
 	//Eine Nachricht besteht aus den folgenden 4 Parametern: 
 	//Sender, Empfänger, einem FIPA-Performative und einem Nachrichteninhalt.
 	
@@ -52,11 +50,4 @@ public class FIPA_Message {
 		this.content = content;
 	};
 	
-	public void setLieferkosten(Lieferkosten lk) {
-		this.lk = lk;
-	}
-	
-	public Lieferkosten getLieferkosten() {
-		return lk;
-	}
 }
