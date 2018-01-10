@@ -25,8 +25,6 @@ public class CustomBuilder implements ContextBuilder<Object> {
 	private ArrayList<Ziel> zielListe = new ArrayList<Ziel>();
 
 	private Koordinator coordinator;
-	Parameters params = RunEnvironment.getInstance().getParameters();
-
 
 	@Override
 	public Context build(Context<Object> context) {
@@ -50,6 +48,8 @@ public class CustomBuilder implements ContextBuilder<Object> {
 		erzeugeZiele(context, new Ziel(space, grid, 10, 35));
 
 		// Verhandlung?
+		Parameters params = RunEnvironment.getInstance().getParameters();
+		System.out.println(params.getInteger("tage"));
 		coordinator = new Koordinator(zielListe, params.getInteger("tage"));
 		context.add(coordinator);
 
