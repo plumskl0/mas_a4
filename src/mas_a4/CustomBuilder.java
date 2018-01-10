@@ -1,7 +1,6 @@
 package mas_a4;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 import repast.simphony.context.Context;
 import repast.simphony.context.space.continuous.ContinuousSpaceFactory;
@@ -9,6 +8,8 @@ import repast.simphony.context.space.continuous.ContinuousSpaceFactoryFinder;
 import repast.simphony.context.space.grid.GridFactory;
 import repast.simphony.context.space.grid.GridFactoryFinder;
 import repast.simphony.dataLoader.ContextBuilder;
+import repast.simphony.engine.environment.RunEnvironment;
+import repast.simphony.parameter.Parameters;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.continuous.SimpleCartesianAdder;
 import repast.simphony.space.grid.Grid;
@@ -24,7 +25,7 @@ public class CustomBuilder implements ContextBuilder<Object> {
 	private ArrayList<Ziel> zielListe = new ArrayList<Ziel>();
 
 	private Koordinator coordinator;
-
+	
 	@Override
 	public Context build(Context<Object> context) {
 		context.setId("mas_a4");
@@ -47,7 +48,9 @@ public class CustomBuilder implements ContextBuilder<Object> {
 		erzeugeZiele(context, new Ziel(space, grid, 10, 35));
 
 		// Verhandlung?
-		coordinator = new Koordinator(zielListe, 5);
+		Parameters params = RunEnvironment.getInstance().getParameters();
+		System.out.println(params.getInteger("tage"));
+		coordinator = new Koordinator(zielListe, params.getInteger("tage"));
 		context.add(coordinator);
 
 		// Boten
