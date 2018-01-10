@@ -31,7 +31,7 @@ public class Bote {
 			moveTowards(pt);
 		}
 	}
-
+//Kommi
 	public void moveTowards(GridPoint pt) {
 		if (!pt.equals(grid.getLocation(this))) {
 			NdPoint myPoint = space.getLocation(this);
