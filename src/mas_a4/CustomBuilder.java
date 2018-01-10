@@ -47,7 +47,7 @@ public class CustomBuilder implements ContextBuilder<Object> {
 		erzeugeZiele(context, new Ziel(space, grid, 10, 35));
 
 		// Verhandlung?
-		coordinator = new Koordinator(zielListe, 5);
+		coordinator = new Koordinator(zielListe);
 		context.add(coordinator);
 
 		// Boten

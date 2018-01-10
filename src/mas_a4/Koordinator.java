@@ -3,7 +3,9 @@ package mas_a4;
 import java.util.ArrayList;
 
 import mas_a4.Ziel;
+import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.engine.schedule.ScheduledMethod;
+import repast.simphony.parameter.Parameters;
 
 public class Koordinator {
 
@@ -11,10 +13,15 @@ public class Koordinator {
 	private ArrayList<Ziel> ziele;
 	
 	private int tage;
+	
+	Parameters params = RunEnvironment.getInstance().getParameters();
 
-	public Koordinator(ArrayList<Ziel> ziele, int tage) {
+	
+
+	public Koordinator(ArrayList<Ziel> ziele) {
 		this.ziele = ziele;
-		this.tage = tage;
+		this.tage = params.getInteger("tage");
+//		System.out.println(this.tage);
 		this.messageList = new ArrayList<FIPA_Message>();
 	}
 
