@@ -70,6 +70,8 @@ public class CustomBuilder implements ContextBuilder<Object> {
 		ctx.add(b);
 		space.moveTo(b, (int) x, (int) y);
 		grid.moveTo(b, (int) x, (int) y);
+		
+		b.setCoordinator(coordinator);
 	}
 
 }

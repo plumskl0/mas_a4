@@ -2,26 +2,55 @@ package mas_a4;
 
 import java.util.ArrayList;
 
-import mas_a4.Ziel;
 import repast.simphony.engine.schedule.ScheduledMethod;
 
 public class Koordinator {
 
 	private ArrayList<FIPA_Message> messageList;
-	private ArrayList<Ziel> ziele;
+	private ArrayList<Ziel> zielList;
+	private ArrayList<Bote> boteList;
 	
 	private int tage;
 
+	private int sender;
+	
 	public Koordinator(ArrayList<Ziel> ziele, int tage) {
-		this.ziele = ziele;
+		this.zielList = ziele;
 		this.tage = tage;
 		this.messageList = new ArrayList<FIPA_Message>();
+		this.boteList = new ArrayList<Bote>();
 	}
 
 	@ScheduledMethod(start = 1, interval = 1)
 	public void run() {
-	}
+		for (int aktTag = 0; aktTag < tage; aktTag++) {
+			// Ziele an Boten mitteilen
+			
+			
+			// Lieferkosten sammeln
 
+			// Geringste Lieferkosten bestimmen mit Trust
+
+			// Lieferungen den Boten zuweisen
+
+			// Auswertung von Kunden Feedback
+
+			//  
+		}
+	}
+	
+	public void addBote(Bote b) {
+		boteList.add(b);
+	}
+	
+	
+	public int getSender() {
+		return sender;
+	}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	/// Message Stuff
 	public void addMessage(FIPA_Message message) {
 		this.messageList.add(message);
 	}
