@@ -27,7 +27,7 @@ public class CustomBuilder implements ContextBuilder<Object> {
 
 	@Override
 	public Context build(Context<Object> context) {
-		context.setId("mas_a3");
+		context.setId("mas_a4");
 
 		// Space und Grid
 		ContinuousSpaceFactory spaceFactory = ContinuousSpaceFactoryFinder.createContinuousSpaceFactory(null);
