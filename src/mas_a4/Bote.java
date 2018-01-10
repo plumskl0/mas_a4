@@ -12,8 +12,7 @@ public class Bote {
 	private ContinuousSpace<Object> space;
 	private Grid<Object> grid;
 
-	private String name;
-
+	private int sender;
 	private Koordinator coordinator;
 
 	private Ziel ziel;
@@ -21,7 +20,7 @@ public class Bote {
 	public Bote(ContinuousSpace<Object> space, Grid<Object> grid, int id) {
 		this.space = space;
 		this.grid = grid;
-		name = "Bote_" + id;
+		this.sender = id;
 	}
 
 	@ScheduledMethod(start = 1, interval = 1)
@@ -55,9 +54,12 @@ public class Bote {
 		}
 	}
 
-	public String getName() {
-		return name;
+	public int getSender() {
+		return this.sender;
+	}
+	
+	public void setCoordinator(Koordinator c) {
+		this.coordinator = c;
 	}
 
-	// public void verhandeln?
 }
