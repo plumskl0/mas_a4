@@ -1,0 +1,16 @@
+<repast.simphony.data2.engine.ConsoleSinkDescriptor>
+  <name>A Console Sink</name>
+  <dataSet>A Data Set</dataSet>
+  <delimiter>,</delimiter>
+  <format>LINE</format>
+  <sourceIds class="linked-hash-set">
+    <string>tick</string>
+    <string>trustVal1</string>
+    <string>trustVal2</string>
+    <string>trustVal3</string>
+    <string>trustVal4</string>
+    <string>AktTag</string>
+  </sourceIds>
+  <enabled>true</enabled>
+  <outputStream>OUT</outputStream>
+</repast.simphony.data2.engine.ConsoleSinkDescriptor>

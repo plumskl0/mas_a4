@@ -1,0 +1,63 @@
+<repast.simphony.data2.engine.DataSetDescriptor>
+  <name>A Data Set</name>
+  <type>NON_AGGREGATE</type>
+  <sourceType>mas_a4.Koordinator</sourceType>
+  <inclTick>true</inclTick>
+  <inclBatchRun>false</inclBatchRun>
+  <inclRandomSeed>false</inclRandomSeed>
+  <scheduleParams>
+    <start>1.0</start>
+    <interval>1.0</interval>
+    <priority>-Infinity</priority>
+    <pType>LAST</pType>
+    <duration>-1.0</duration>
+    <frequency>REPEAT</frequency>
+    <hashCode>-872858857</hashCode>
+  </scheduleParams>
+  <atEnd>true</atEnd>
+  <methodDataSources class="linked-hash-map">
+    <entry>
+      <string>trustVal1</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>trustVal1</id>
+        <className>mas_a4.Koordinator</className>
+        <methodName>trustVal1</methodName>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>trustVal2</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>trustVal2</id>
+        <className>mas_a4.Koordinator</className>
+        <methodName>trustVal2</methodName>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>trustVal3</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>trustVal3</id>
+        <className>mas_a4.Koordinator</className>
+        <methodName>trustVal3</methodName>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>trustVal4</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>trustVal4</id>
+        <className>mas_a4.Koordinator</className>
+        <methodName>trustVal4</methodName>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>AktTag</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>AktTag</id>
+        <className>mas_a4.Koordinator</className>
+        <methodName>getAktTag</methodName>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+  </methodDataSources>
+  <countSources class="linked-hash-map"/>
+  <customNADataSources class="linked-hash-map"/>
+  <customAggDataSources class="linked-hash-map"/>
+</repast.simphony.data2.engine.DataSetDescriptor>

@@ -46,17 +46,19 @@ public class CustomBuilder implements ContextBuilder<Object> {
 		erzeugeZiele(context, new Ziel(space, grid, 40, 10));
 		erzeugeZiele(context, new Ziel(space, grid, 35, 45));
 		erzeugeZiele(context, new Ziel(space, grid, 10, 35));
+		
 
 		// Verhandlung?
 		Parameters params = RunEnvironment.getInstance().getParameters();
+		System.out.println(params.getInteger("tage"));
 		coordinator = new Koordinator(zielListe, params.getInteger("tage"));
 		context.add(coordinator);
 
 		// Boten
-		erzeugeBote(context, new Bote(space, grid, 1), 5, 5);
-		erzeugeBote(context, new Bote(space, grid, 2), 45, 5);
-		erzeugeBote(context, new Bote(space, grid, 3), 5, 25);
-		erzeugeBote(context, new Bote(space, grid, 4), 45, 45);
+		erzeugeBote(context, new Bote(space, grid, 0), 5, 5);
+		erzeugeBote(context, new Bote(space, grid, 1), 45, 5);
+		erzeugeBote(context, new Bote(space, grid, 2), 5, 25);
+		erzeugeBote(context, new Bote(space, grid, 3), 45, 45);
 
 		return context;
 	}
@@ -74,6 +76,7 @@ public class CustomBuilder implements ContextBuilder<Object> {
 		grid.moveTo(b, (int) x, (int) y);
 		
 		b.setCoordinator(coordinator);
+		coordinator.addBote(b);
 	}
 
 }

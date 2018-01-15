@@ -7,7 +7,7 @@ public class Ziel {
 
 	private ContinuousSpace<Object> space;
 	private Grid<Object> grid;
-
+	
 	private int x;
 	private int y;
 
@@ -16,6 +16,7 @@ public class Ziel {
 		this.grid = grid;
 		this.x = x;
 		this.y = y;
+		
 	}
 
 	public int getX() {
@@ -25,5 +26,7 @@ public class Ziel {
 	public int getY() {
 		return y;
 	}
+	
+
 
 }
